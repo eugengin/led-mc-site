@@ -1,0 +1,157 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LED-MC — Two Industries. One Brand.</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+      background: #fff;
+      color: #111;
+    }
+    header {
+      background: #c00;
+      color: #fff;
+      text-align: center;
+      padding: 60px 20px;
+    }
+    header h1 {
+      font-size: 36px;
+      margin: 0;
+    }
+    header p {
+      font-size: 18px;
+      margin-top: 10px;
+    }
+    .nav-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    .nav-grid a {
+      display: block;
+      padding: 30px;
+      border: 2px solid #c00;
+      border-radius: 8px;
+      text-decoration: none;
+      color: #c00;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    .nav-grid a:hover {
+      background: #c00;
+      color: #fff;
+    }
+    .slider-wrapper {
+      width: 100%;
+      max-width: 600px;
+      margin: 40px auto;
+      overflow: hidden;
+    }
+    .slider-track {
+      display: flex;
+      transition: transform 0.8s ease;
+    }
+    .slider-track a {
+      min-width: 100%;
+    }
+    .slider-track img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
+    .dots-wrapper {
+      display: flex;
+      justify-content: center;
+      margin: 20px 0;
+      gap: 10px;
+    }
+    .dots img {
+      width: 40px;
+      height: 40px;
+      object-fit: cover;
+      border-radius: 50%;
+      opacity: 0.6;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .dots img.active {
+      opacity: 1;
+      border: 2px solid black;
+    }
+    footer {
+      text-align: center;
+      padding: 30px;
+      font-size: 14px;
+      background: #f4f4f4;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>LED-MC</h1>
+    <p>Two Industries. One Brand.</p>
+  </header>
+
+  <div class="slider-wrapper" id="slider1">
+    <div class="slider-track">
+      <a href="#"><img src="https://led-mc.com/gallery_gen/a3719c54ee0537153ff4b282778ef5fd_1200x1200.png" alt="Image 1"></a>
+      <a href="#"><img src="https://led-mc.com/gallery_gen/a3719c54ee0537153ff4b282778ef5fd_1200x1200.png" alt="Image 2"></a>
+    </div>
+  </div>
+  <div class="dots-wrapper"><div class="dots"></div></div>
+
+  <div class="nav-grid">
+    <a href="#led">LED MANUFACTURING CIRCUIT</a>
+    <a href="#agro">AGRO BUSINESS EXPORT</a>
+    <a href="#design">PRODUCT DESIGN</a>
+    <a href="#logistics">INTERNATIONAL LOGISTICS</a>
+  </div>
+
+  <footer>
+    © 2025 LED-MC · Berlin – Warsaw – Sofia – Rostov
+  </footer>
+
+  <script>
+    function initSlider(containerId) {
+      const container = document.getElementById(containerId);
+      const track = container.querySelector('.slider-track');
+      const slides = track.querySelectorAll('a');
+      const dotsContainer = document.querySelector('.dots');
+      let currentIndex = 0;
+
+      slides.forEach((slide, index) => {
+        const dot = document.createElement('img');
+        dot.src = slide.querySelector('img').src;
+        dot.alt = `Dot ${index + 1}`;
+        dot.addEventListener('click', () => {
+          currentIndex = index;
+          updateSlider();
+        });
+        dotsContainer.appendChild(dot);
+      });
+
+      function updateSlider() {
+        track.style.transform = `translateX(-${currentIndex * 100}%)`;
+        dotsContainer.querySelectorAll('img').forEach((dot, i) => {
+          dot.classList.toggle('active', i === currentIndex);
+        });
+      }
+
+      updateSlider();
+      setInterval(() => {
+        currentIndex = (currentIndex + 1) % slides.length;
+        updateSlider();
+      }, 3000);
+    }
+
+    initSlider('slider1');
+  </script>
+</body>
+</html>
