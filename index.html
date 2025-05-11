@@ -4,50 +4,34 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>LED-MC</title>
+  <title>LED-MC Blank</title>
   <style>
-    body {
+    html, body {
       margin: 0;
-      font-family: sans-serif;
+      padding: 0;
+      height: 100%;
+      width: 100%;
     }
-    .main {
+    .container {
       display: flex;
+      flex-direction: row;
       height: 100vh;
-    }
-    .left, .right {
-      width: 50%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      font-size: 22px;
-      font-weight: bold;
+      width: 100%;
     }
     .left {
+      width: 50%;
       background: #ffffff;
-      color: #b30000;
     }
     .right {
+      width: 50%;
       background: #b30000;
-      color: #ffffff;
-    }
-    .center {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 200px;
-      height: 200px;
-      background: url('https://led-mc.com/gallery_gen/a3719c54ee0537153ff4b282778ef5fd_1200x1200.png') no-repeat center center;
-      background-size: contain;
     }
   </style>
 </head>
 <body>
-  <div class="main">
-    <div class="left">LED<br>MANUFACTURING<br>CIRCUIT</div>
-    <div class="right">EXPORT<br>AGRO<br>COMMODITIES</div>
+  <div class="container">
+    <div class="left"></div>
+    <div class="right"></div>
   </div>
-  <div class="center"></div>
 </body>
 </html>
