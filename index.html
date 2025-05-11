@@ -9,49 +9,45 @@
     body {
       margin: 0;
       font-family: sans-serif;
-      background: #fff;
     }
-    .slider {
+    .main {
       display: flex;
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
+      height: 100vh;
     }
-    .slider img {
-      width: 100%;
-      max-width: 100%;
-      scroll-snap-align: center;
+    .left, .right {
+      width: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      font-size: 22px;
+      font-weight: bold;
     }
-    section {
-      padding: 60px 20px;
-      max-width: 1000px;
-      margin: 0 auto;
-      text-align: center;
+    .left {
+      background: #ffffff;
+      color: #b30000;
     }
-    h2 {
-      font-size: 2em;
-      margin-bottom: 20px;
+    .right {
+      background: #b30000;
+      color: #ffffff;
     }
-    p {
-      font-size: 1.1em;
-      line-height: 1.6em;
+    .center {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 200px;
+      height: 200px;
+      background: url('https://led-mc.com/gallery_gen/a3719c54ee0537153ff4b282778ef5fd_1200x1200.png') no-repeat center center;
+      background-size: contain;
     }
   </style>
 </head>
 <body>
-
-  <div class="slider">
-    <img src="https://led-mc.com/gallery_gen/a3719c54ee0537153ff4b282778ef5fd_1200x1200.png" alt="Slide 1" />
-    <img src="https://led-mc.com/gallery_gen/a3719c54ee0537153ff4b282778ef5fd_1200x1200.png" alt="Slide 2" />
+  <div class="main">
+    <div class="left">LED<br>MANUFACTURING<br>CIRCUIT</div>
+    <div class="right">EXPORT<br>AGRO<br>COMMODITIES</div>
   </div>
-
-  <section id="logistics">
-    <h2>Logistics & International Delivery</h2>
-    <p>
-      LED-MC operates its own fleet of licensed international transport. Deliveries are carried out from our logistics base in Rostov-on-Don and Azov, Russia — with direct container shipments from the port of Novorossiysk to Xingang, China.
-    </p>
-    <p>
-      We provide full documentary support, phytosanitary certificates, customs clearance, and continuous monitoring of cargo status from the warehouse to port of arrival.
-    </p>
-  </section>
+  <div class="center"></div>
 </body>
 </html>
