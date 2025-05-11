@@ -1,72 +1,50 @@
 
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>LED-MC Logistics</title>
+  <title>LED-MC</title>
   <style>
     body {
       margin: 0;
-      padding: 0;
       font-family: sans-serif;
       background: #fff;
-      color: #111;
     }
-    header {
-      background-color: #000;
-      color: #fff;
-      padding: 20px;
-      text-align: center;
+    .slider {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
     }
-    header img {
-      max-height: 60px;
-      vertical-align: middle;
+    .slider img {
+      width: 100%;
+      max-width: 100%;
+      scroll-snap-align: center;
     }
-    nav {
-      background-color: #222;
-      padding: 10px 0;
-      text-align: center;
-    }
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      margin: 0 15px;
-      font-weight: bold;
-    }
-    nav a:hover {
-      text-decoration: underline;
-    }
-    .logistics-section {
+    section {
       padding: 60px 20px;
       max-width: 1000px;
       margin: 0 auto;
       text-align: center;
     }
-    .logistics-section h2 {
+    h2 {
       font-size: 2em;
       margin-bottom: 20px;
     }
-    .logistics-section p {
+    p {
       font-size: 1.1em;
       line-height: 1.6em;
-      margin-bottom: 40px;
     }
   </style>
 </head>
 <body>
-  <header>
-    <img src="https://led-mc.com/gallery_gen/a3719c54ee0537153ff4b282778ef5fd_1200x1200.png" alt="LED-MC Logo">
-  </header>
 
-  <nav>
-    <a href="#">Home</a>
-    <a href="#logistics">Logistics</a>
-    <a href="#">Contacts</a>
-    <a href="#">About</a>
-  </nav>
+  <div class="slider">
+    <img src="https://led-mc.com/gallery_gen/a3719c54ee0537153ff4b282778ef5fd_1200x1200.png" alt="Slide 1" />
+    <img src="https://led-mc.com/gallery_gen/a3719c54ee0537153ff4b282778ef5fd_1200x1200.png" alt="Slide 2" />
+  </div>
 
-  <section class="logistics-section" id="logistics">
+  <section id="logistics">
     <h2>Logistics & International Delivery</h2>
     <p>
       LED-MC operates its own fleet of licensed international transport. Deliveries are carried out from our logistics base in Rostov-on-Don and Azov, Russia — with direct container shipments from the port of Novorossiysk to Xingang, China.
